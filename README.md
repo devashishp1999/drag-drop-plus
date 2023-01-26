@@ -54,15 +54,15 @@ npm i drag-drop-plus
 Include **one of the following** CDN link in your project.
 
 ```sh
-https://devashishp1999.github.io/utils-deva/main.min.js
+https://devashishp1999.github.io/drag-drop-plus/main.min.js
 
 or
 
-https://cdn.jsdelivr.net/gh/devashishp1999/utils-deva@main/main.min.js
+https://cdn.jsdelivr.net/gh/devashishp1999/drag-drop-plus@main/main.min.js
 ```
 
 <!-- USAGE EXAMPLES -->
-
+<!--
 ## List of Classes :
 
 <details close>
@@ -151,9 +151,9 @@ This will create a new toast with the text "Hello World" and position it on the 
 This library uses `querySelector` and `appendChild` which are supported by all modern browsers.
 
 <!--
-<li><h3>Toast </h3> : A standalone class for creating customizable, dismissable toast notifications.</li><br />-->
+<li><h3>Toast </h3> : A standalone class for creating customizable, dismissable toast notifications.</li><br />
 </ol>
-
+-->
 ### License
 
 <p>This library is released under the <a href="https://opensource.org/licenses/MIT" target="_new">MIT license</a></p>
