@@ -1,0 +1,25 @@
+{
+  "name": "drag-drop-plus",
+  "version": "1.0.0",
+  "description": "Drag any object in DOM and drop it anywhere in DOM. Works well with Mouse, Touch and Keyboard events. Suuports accessibility to some extent.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"no test available\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devashishp1999/drag-drop-plus.git"
+  },
+  "keywords": [
+    "drag-drop",
+    "accessibility",
+    "Ally",
+    "drag-drop-elements"
+  ],
+  "author": "Devashish",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devashishp1999/drag-drop-plus/issues"
+  },
+  "homepage": "https://github.com/devashishp1999/drag-drop-plus#readme"
+}
