@@ -102,7 +102,7 @@ toast.show({
 
 ### Removing a Toast
 
-To remove a specific toast, call the `remove()` method on the Toast instance and pass in the toast element as an argument.
+To ic toast, call the `remove()` method on the Toast instance and pass in the toast element as an argument.
 
 ```js
 toast.remove(toastElement);
