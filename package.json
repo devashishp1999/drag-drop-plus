@@ -1,6 +1,6 @@
 {
   "name": "drag-drop-plus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Drag any object in DOM and drop it anywhere in DOM. Works well with Mouse, Touch and Keyboard events. Suuports accessibility to some extent.",
   "main": "main.js",
   "scripts": {
