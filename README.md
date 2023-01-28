@@ -76,7 +76,7 @@ Also you can set your custom `Attributes`. To make an element droppable in speci
 
 <!-- USAGE EXAMPLES -->
 
-## Usage - [Demo link](https://jsfiddle.net/devashishpujari/8kt9axo3/18/)
+## Usage - [Demo link](https://jsfiddle.net/devashishpujari/8kt9axo3/30/)
 
 #### Basic drag-drop
 
@@ -271,14 +271,13 @@ draggable.onDrop = function (event) {
 /* Other Methods */
 ```
 
-#### Example : [JSFiddle Link](https://jsfiddle.net/devashishpujari/8kt9axo3/18/)
+#### Example : [JSFiddle Link](https://jsfiddle.net/devashishpujari/8kt9axo3/30/)
 
 If you liked this. Give this repo a ⭐ STAR ⭐
 
 ## License
 
 <p>This library is released under the <a href="https://opensource.org/licenses/MIT" target="_new">MIT license</a></p>
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
