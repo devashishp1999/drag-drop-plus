@@ -39,11 +39,13 @@ Include **one of the following** CDN link in your project. And create a new inst
 https://devashishp1999.github.io/drag-drop-plus/main.min.js
 ```
 
+<!--
 **or**
 
 ```sh
 https://cdn.jsdelivr.net/gh/devashishp1999/drag-drop-plus@main/main.min.js
 ```
+-->
 
 ```js
 <script src="CDN_LINK"></script>
