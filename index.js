@@ -1,4 +1,4 @@
-export default class Draggable {
+export default class DragDrop {
   static MOVE_BY = 20; // px
   static SCROLL_ZONE_HEIGHT = 80; // px
   static SCROLL_AMOUNT = 10; // px
