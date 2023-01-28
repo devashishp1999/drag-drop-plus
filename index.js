@@ -216,18 +216,18 @@ export default class DragDrop {
       const cursorPosition = this.#mouseLastCoords.y;
 
       const draggingBoxTop = parseInt(this.#draggingBox.style.top);
-      const scrollAmount = Draggable.SCROLL_AMOUNT;
+      const scrollAmount = DragDrop.SCROLL_AMOUNT;
 
       // Check for mouseY within 80px from top. To scroll up
       // Also scrollY > 0 is checked to not update Box-Top when scrollY == 0
-      if (cursorPosition < Draggable.SCROLL_ZONE_HEIGHT && window.pageYOffset) {
+      if (cursorPosition < DragDrop.SCROLL_ZONE_HEIGHT && window.pageYOffset) {
         window.scrollBy(0, -scrollAmount);
 
         // Move draggingBox with scroll
         this.#draggingBox.style.top = draggingBoxTop - scrollAmount + "px";
       }
       // Check for mouseY within 80px from bottom. To scroll down.
-      else if (cursorPosition > viewportHeight - Draggable.SCROLL_ZONE_HEIGHT) {
+      else if (cursorPosition > viewportHeight - DragDrop.SCROLL_ZONE_HEIGHT) {
         window.scrollBy(0, scrollAmount);
 
         // Move draggingBox with scroll
@@ -310,7 +310,7 @@ export default class DragDrop {
   // Handle KeyDown event on Document
   #onKeyDown(event) {
     // which direction to move
-    const direction = Draggable.MOVE_KEYS[event.keyCode];
+    const direction = DragDrop.MOVE_KEYS[event.keyCode];
 
     // On [SPACE] keyDown,
     //if box has focus()
@@ -385,7 +385,7 @@ export default class DragDrop {
 
     // transition when distance > 200PX
     let animDuration = 0;
-    if (Math.max(dx, dy) > 200) animDuration = Draggable.DROP_ANIM_DURATION;
+    if (Math.max(dx, dy) > 200) animDuration = DragDrop.DROP_ANIM_DURATION;
 
     Object.assign(this.#draggingBox.style, {
       transition: animDuration + "ms linear",
@@ -479,7 +479,7 @@ export default class DragDrop {
     const curr_y = parseInt(this.#draggingBox.style.top);
     const curr_x = parseInt(this.#draggingBox.style.left);
 
-    const moveBy = Draggable.MOVE_BY;
+    const moveBy = DragDrop.MOVE_BY;
 
     switch (direction) {
       case "N":
