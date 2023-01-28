@@ -3,11 +3,11 @@
 <!-- PROJECT LOGO -->
 <div align="center">
 
-   # Drag-Drop Plus
+# Drag-Drop Plus
 
-   A JavaScript library for enabling **drag and drop** functionality on any elements in the DOM. This library also includes **accessibility** features, allowing users to drag and drop elements using only their keyboard.
+A JavaScript library for enabling **drag and drop** functionality on any elements in the DOM. This library also includes **accessibility** features, allowing users to drag and drop elements using only their keyboard.
 
-   [Request a Feature](https://github.com/devashishp1999/drag-drop-plus/issues)
+[Request a Feature](https://github.com/devashishp1999/drag-drop-plus/issues)
 
 </div>
 
@@ -18,147 +18,267 @@
   </ul>
 </details> -->
 
-
 ## About The Project
 
 The **drag-drop-plus** library is a powerful and easy to use tool that allows developers to easily add drag and drop functionality to their web projects. This library is designed to make it easy to add drag and drop functionality to any element in the DOM, while **also providing accessibility options** so users can drag and drop elements using only their keyboard.
 
 **Use this library if:**
 
-- You want to drag an element and drop it somewhere on DOM
+- You want to drag any element and drop it somewhere on DOM
 - You also want Drag-drop feature withthe keyboards
 
 #### Built With
 
-[![JavaScript][javascript.com]][javascript-url] &nbsp; [![HTML][html.com]][html-url] &nbsp; [![CSS][css.com]][css-url] &nbsp; [![OOPs][OOPs.com]][OOPs-url]
+[![JavaScript][javascript.com]][javascript-url] &nbsp; [![HTML][html.com]][html-url] &nbsp; [![CSS][css.com]][css-url] &nbsp; [![OOPs][oops.com]][oops-url]
 
 ## Installation
 
-• Include the `main.js` file in your project and create a new instance of a class.
+Include **one of the following** CDN link in your project. And create a new instance of the class.
+
+```sh
+https://devashishp1999.github.io/drag-drop-plus/main.min.js
+```
+
+**or**
+
+```sh
+https://cdn.jsdelivr.net/gh/devashishp1999/drag-drop-plus@main/main.min.js
+```
 
 ```js
-<script src="CDN-LINK"></script>
+<script src="CDN_LINK"></script>
 
 <script>
   const draggable = new DragDrop();
 </script>
 ```
 
-Install with NPM:
+**Or** Install with NPM:
 
 ```sh
 npm i drag-drop-plus
 ```
-**or**
 
-Include **one of the following** CDN link in your project.
+```js
+import DragDrop from "drag-drop-plus";
 
-```sh
-https://devashishp1999.github.io/drag-drop-plus/main.min.js
-
-or
-
-https://cdn.jsdelivr.net/gh/devashishp1999/drag-drop-plus@main/main.min.js
+const draggable = new DragDrop();
 ```
+
+**NOTE :** The script **needs an attribute** of the element to make it **draggable or a drop-zone**. Default attributes are set for:
+
+- Element to drag : `data-draggable`
+- Element to drop in : `data-dropzone`
+
+Also you can set your custom `Attributes`. To make an element droppable in specific drop-zone among multiple drop-zones.
+
+> To see elements in action, **do not forget to add styles**. `data-dragging-box` is the default attribute for the element while dragging. And the Element while dragging will always be a `clone()` of the element you are dragging.
 
 <!-- USAGE EXAMPLES -->
-<!--
-## List of Classes :
 
-<details close>
-  <summary><strong>👇</strong></summary>
-  <ol>
-    <li><a href="#toast"><code>new Toast()</code></a></li>
-  </ol>
-</details>
+## Usage - [Demo link](https://jsfiddle.net/devashishpujari/8kt9axo3/18/)
 
-<ol>
-  <li id="toast"><h2>Toast</h2></li>
-  
-The Toast class provides a simple and flexible way to create and manage toast notifications in your web application. It allows you to easily customize the look, position and behavior of the toasts, and provides methods for showing, hiding and removing toasts.
+#### Basic drag-drop
 
-### Showing a Toast
-
-To show a toast, call the `show()` method on the Toast instance and pass in an options object.
+1.) Create an instance.
 
 ```js
-toast.show({
-  text: "Hello World",
-  position: "top",
-  duration: 3,
-  styles: {
-    backgroundColor: "red",
-    color: "white",
-    fontSize: "20px",
-  },
-  animations: {
-    slideIn: "1s",
-  },
-  fonts: {
-    fontFamily: "Arial",
-  },
+const draggable = new DragDrop();
+```
+
+2.) Add required attributes to HTML Tags
+
+```html
+<!-- Tell script what to drag -->
+<span data-draggable> drag-box 1 </span>
+<span data-draggable> drag-box 2 </span>
+
+<!-- Tell script where to drop -->
+<div data-dropzone>drop-zone 1</div>
+<div data-dropzone>drop-zone 2</div>
+<div data-dropzone>drop-zone 3</div>
+```
+
+**And DONE**. Now, in this example, `<span>` elements are draggable and you can drop them inside the `<div>` elements.
+
+#### Drop-zone specific drag-boxes : `setDragDropElements()`
+
+To create multiple draggable-boxes and specific drop-zones for them. Create multiple instances of the class and use `setDragDropElements()` method.
+
+1.) Create multiple instances.
+
+```js
+const draggable_1 = new DragDrop();
+const draggable_2 = new DragDrop();
+
+// 1st Drag-Drop Environment
+draggable_1.setDragDropElements({
+  boxAttr: "data-draggable-1",
+  dropboxAttr: "data-dropzone-1",
+  dragboxAttr: "data-dragging-box-1", // Attribute for the Element while dragging
+});
+
+// 2nd Drag-Drop Environment
+draggable_2.setDragDropElements({
+  boxAttr: "data-draggable-2",
+  dropboxAttr: "data-dropzone-2",
+  dragboxAttr: "data-dragging-box-2", // Attribute for the Element while dragging
 });
 ```
 
-### Removing a Toast
+2.) Add required attributes to HTML Tags
 
-To remove a specific toast, call the `remove()` method on the Toast instance and pass in the toast element as an argument.
+```html
+<!-- Draggable SET 1-->
+<span data-draggable-1> drag-box 1 </span>
+<span data-draggable-1> drag-box 1 </span>
 
-```js
-toast.remove(toastElement);
+<!-- DropZone for SET 1 -->
+<div data-dropzone-1>drop-zone 1</div>
+<div data-dropzone-1>drop-zone 2</div>
+
+------------------------------------------
+
+<!-- Draggable SET 2-->
+<span data-draggable-2> drag-box 2 </span>
+<span data-draggable-2> drag-box 2 </span>
+
+<!-- DropZone for SET 2 -->
+<div data-dropzone-2>drop-zone 1</div>
+<div data-dropzone-2>drop-zone 2</div>
 ```
 
-### Removing All Toasts
+**Now** the `<span>` elements with `data-draggable-1` attribute can only be dropped in the `<div>` elements with the `data-dropzone-1` attributes. And same for every new `Attribute` you specify for a new Instance `new DragDrop()`.
 
-To remove all toasts, call the `removeAll()` method on the Toast instance.
+#### Drag-Drop with Keyboard:
+
+1. Move to a draggable element with `TAB` key.
+
+2. Press `SPACE` key to select the focused draggable element.
+
+3. To drop you have 2 options :
+   - Use `TAB` key to focus a `dropzone`. And then press `SPACE` key to drop on focused dropzone.
+   - Use `Arrow Keys` to move the selected drag-box. And make its center inside your favourite dropzone. And then press `SPACE` key to drop the element.
+
+## Methods and properties
+
+The library is built with a number of abstracted methods, which make it easy for developers to customize the behavior of the drag and drop functionality to fit their specific needs.
+
+#### Properties :
+
+**1**) `draggingBox`: Reference of the HTMLElement being dragged. Read Only.
+**2**) `boxToDrag`: Reference of the HTMLElement to drag. Read Only.
+
+**Note :** `boxToDrag !== draggingBox`
 
 ```js
-toast.removeAll();
+const draggable = new DragDrop();
+
+draggable.onDragStart = function () {
+  console.log(draggable.draggingBox); // HTMLElement user is dragging
+  console.log(draggable.boxToDrag); // HTMLElement that is selected to drag
+};
+
+// There are more methods other than onDragStart(). See 'Methods' section
 ```
 
-### Configuration
-
-The options object passed to the `show()` method can include the following properties:
-
-<ul><li><code>text</code> (string): The text to display in the toast (default: "Toast text").</li><li><code>position</code> (string): The position of the toast. Available options are "top", "bottom", "center", "left" and "right" (default: "bottom").</li><li><code>duration</code> (number): The duration in seconds for which the toast should be displayed (default: 3).</li><li><code>onClose</code> (function): A callback function that is invoked when the toast is closed (default: null).</li><li><code>styles</code> (object): An object containing custom CSS styles to be applied to the toast (default: {}).</li><li><code>animations</code> (object): An object containing custom CSS animations to be applied to the toast (default: {}).</li><li><code>fonts</code> (object): An object containing custom fonts to be applied to the toast (default: {}).</li></ul>
-
-### Example
+**3**) `droppable` : Read Only.
 
 ```js
-const toast = new Toast();
-toast.show({
-  text: "Hello World",
-  position: "top",
-  duration: 2.5,
-  styles: {
-    backgroundColor: "red",
-    color: "white",
-    fontSize: "20px",
-  },
-  animations: {
-    slideIn: "1s",
-  },
-  fonts: {
-    fontFamily: "Arial",
-  },
+const draggable = new DragDrop();
+
+draggable.onDrag = function () {
+  // Read Only property.
+  console.log(draggable.draggable); // Logs the Object on every Drag event
+};
+/*
+Returned Object :
+{
+  value: false, // If draggibg-box is over valid drop-zone or not. Default: false
+  dropbox: null, // Valid dropbox HTMLElement or Null/False. Default: null
+};
+*/
+```
+
+It can be used to check, before droping or while dragging, if an element can be dropped or not. and get the drop-zone element. Can be **helpful** to style elements, also with the `methods()` listed below.
+
+#### Methods :
+
+**1**) `setDragDropElements()` : Tells script the value of custom attributes.
+
+Put the same attributes in your HTMLElements that you update via this method
+
+```js
+const draggable = new DragDrop();
+
+draggable.setDragDropElements({
+  boxAttr: "data-drag-this",
+  dropboxAttr: "data-drop-here",
+  dragboxAttr: "data-being-dragged", // Attribute for the Element while dragging
 });
 ```
 
-This will create a new toast with the text "Hello World" and position it on the top of the screen and it will be removed after 3000ms. Also the toast will slide in from 1s with custom background color, color and font size and font family.
+**2**) `addEventListners()` : Adds eventListners to drag-drop to the elements with the specified attributes. The class this function by default.
 
-### Browser Support
+**3**) `removeEventListners()` : Removes all the attached eventListners for the Drag-drop functionality from the elements with the attributes in that instance.
 
-This library uses `querySelector` and `appendChild` which are supported by all modern browsers.
+```js
+const draggable_1 = new DragDrop();
+const draggable_2 = new DragDrop();
 
-<!--
-<li><h3>Toast </h3> : A standalone class for creating customizable, dismissable toast notifications.</li><br />
-</ol>
--->
-### License
+draggable_1.removeEventListners();
+draggable_1.addEventListners();
+
+draggable_2.removeEventListners();
+```
+
+**Methods to override :** by default they are set to `() => null`
+
+**1**) `onDragStart()` : runs when selected a draggable-box
+**2**) `onDrag()` : runs when Dragging with mouse/ Touch/ KeyPresses
+**3**) `onKeyDrag()` : runs when Dragging with only KeyPress
+**4**) `onDragEnd()` : runs when mouse is released after dragging.
+**5**) `onDrop()` : runs when element dropped successfully
+**6**) `onTabKeypress()` : runs when hopping b/w drop-zones.
+
+Override these methods, if you want to, as following:
+
+```js
+const draggable = new DragDrop();
+
+draggable.onDragStart = function () {
+  console.log(draggable.boxToDrag); // HTMLElement user selected to drag
+
+  /* Any thing you want to do onDragStart */
+};
+
+draggable.onDrag = function (event) {
+  console.log(draggable.draggingBox); // HTMLElement user is dragging
+  console.log(draggable.droppable);
+
+  console.log(event.type);
+  /* Any thing you want to do onDrag */
+};
+
+draggable.onDrop = function (event) {
+  console.log(draggable.droppable.dropbox) // HTMLElement where drag-box is dropped
+  console.log(event); // MouseEvent or KeyboardEvent
+  .
+  .
+  /* Any thing you want to do onDrop */
+};
+
+/* Other Methods */
+```
+
+#### Example : [JSFiddle Link](https://jsfiddle.net/devashishpujari/8kt9axo3/18/)
+
+If you liked this. Give this repo a ⭐ STAR ⭐
+
+## License
 
 <p>This library is released under the <a href="https://opensource.org/licenses/MIT" target="_new">MIT license</a></p>
 
-Hope this library will be helpful for you.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
