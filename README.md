@@ -36,13 +36,13 @@ The **drag-drop-plus** library is a powerful and easy to use tool that allows de
 Include **one of the following** CDN link in your project. And create a new instance of the class.
 
 ```sh
-https://devashishp1999.github.io/utils-deva/main.min.js
+https://devashishp1999.github.io/drag-drop-plus/main.min.js
 ```
 
 **or**
 
 ```sh
-https://cdn.jsdelivr.net/gh/devashishp1999/utils-deva@main/main.min.js
+https://cdn.jsdelivr.net/gh/devashishp1999/drag-drop-plus@main/main.min.js
 ```
 
 ```js
