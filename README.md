@@ -80,7 +80,7 @@ Also you can set your custom `Attributes`. To make an element droppable in speci
 
 ## Usage - [Demo link](https://jsfiddle.net/devashishpujari/8kt9axo3/33/)
 
-#### Basic drag-drop
+### Basic drag-drop
 
 1.) Create an instance.
 
@@ -103,7 +103,7 @@ const draggable = new DragDrop();
 
 **And DONE**. Now, in this example, `<span>` elements are draggable and you can drop them inside the `<div>` elements.
 
-#### Drop-zone specific drag-boxes : `setDragDropElements()`
+### Drop-zone specific drag-boxes : `setDragDropElements()`
 
 To create multiple draggable-boxes and specific drop-zones for them. Create multiple instances of the class and use `setDragDropElements()` method.
 
@@ -152,7 +152,7 @@ draggable_2.setDragDropElements({
 
 **Now** the `<span>` elements with `data-draggable-1` attribute can only be dropped in the `<div>` elements with the `data-dropzone-1` attributes. And same for every new `Attribute` you specify for a new Instance `new DragDrop()`.
 
-#### Drag-Drop with Keyboard:
+### Drag-Drop with Keyboard:
 
 1. Move to a draggable element with `TAB` key.
 
